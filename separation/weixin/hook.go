@@ -75,6 +75,9 @@ func (m *WebhookMsg) textHandle(payload []byte) error {
 				if err := m.textSendLoop(line); err != nil {
 					return err
 				}
+			} else {
+				buf.WriteString(line)
+				buf.WriteString("\n")
 			}
 		}
 		notLastLine = reader.Scan()
@@ -109,6 +112,9 @@ func (m *WebhookMsg) markdownHandle(payload []byte) error {
 				if err := m.markdownSendLoop(line); err != nil {
 					return err
 				}
+			} else {
+				buf.WriteString(line)
+				buf.WriteString("\n")
 			}
 		}
 		notLastLine = reader.Scan()
