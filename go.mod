@@ -3,7 +3,6 @@ module webhook-transfer
 go 1.22
 
 require (
-	github.com/google/uuid v1.6.0
 	github.com/json-iterator/go v1.1.12
 	github.com/labstack/echo/v4 v4.12.0
 )

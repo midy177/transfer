@@ -15,6 +15,7 @@ func main() {
 	flag.Parse()
 	seps := separation.New()
 	e := echo.New()
+	e.HideBanner = true
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.POST("/transfer/:name", func(c echo.Context) error {
